@@ -39,7 +39,14 @@ var twilioIceServers = [
      //   username: 'ea757ad2c42b932c7f2abe480295e7eb039dc2b13b78c86bc412818ed51e5eea',
      //   credential: 'MPnnojPRoPDI+B3kLONGF9P440Lb8NkrTq+FxxJBVro=' } 
 ];
-var configuration = {"iceServers": [{"url": "stun:stun.l.google.com:19302"}]};
+var configuration = {iceServers: [
+  {urls: "stun:stun.l.google.com:19302"},
+  { 
+    url: 'turn:turn.anyfirewall.com:443?transport=tcp',
+    credential: 'webrtc',
+    username: 'webrtc'
+  }
+]};
 // configuration.iceServers = twilioIceServers;
 
 var pcPeers = {};
